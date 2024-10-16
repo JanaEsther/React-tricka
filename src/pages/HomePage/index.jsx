@@ -4,9 +4,9 @@ import { TShirtSetup } from '../components/TShirtSetup';
 import './style.css';
 
 export const HomePage = () => {
-  const[type, setType] = useState('normalShortSleeve');
+  const [type, setType] = useState('normalShortSleeve');
   const [color, setColor] = useState('yellow');
-  const [print, setPrint] = useState('Ahoj světe');
+  const [print, setPrint] = useState('Ahoj světe!');
 
   return (
     <div className="container">
@@ -17,10 +17,9 @@ export const HomePage = () => {
         <div className="tshirt-panel__setup">
           <h2>Možnosti:</h2>
           <TShirtSetup
-          onTypeChange ={(type)=>{setType(type)}}
-          onColorChange = {(color)=>{setColor(color)}}
-          onPrintChange = {(print)=>{setPrint(print)}}
-
+            onTypeChange={setType}
+            onColorChange={setColor}
+            onPrintChange={setPrint}
           />
         </div>
       </div>

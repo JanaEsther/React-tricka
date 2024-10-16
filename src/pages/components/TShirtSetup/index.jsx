@@ -1,13 +1,14 @@
 import './style.css';
 
-export const TShirtSetup = (onTypeChange, onColorChange, onPrintChange) => {
+export const TShirtSetup = () => {
   return (
     <form className="tshirt-setup">
-      <label className="tshirt-setup__label">Typ: </label>
+      <label className="tshirt-setup__label">Typ:</label>
       <select
         className="tshirt-setup__input"
-        onChange={(e) => onTypeChange(e.target.value)}
+        onChange={(e) => (onTypeChange = e.target.value)}
       >
+        console.log('Type changed to:', e.target.value);
         <option value="normalShortSleeve">Krátký rukáv</option>
         <option value="tallShortSleeve">Krátký rukáv (prodloužené)</option>
         <option value="normalLongSleeve">Dlouhý rukáv</option>
@@ -16,10 +17,10 @@ export const TShirtSetup = (onTypeChange, onColorChange, onPrintChange) => {
         <option value="tallNoSleeve">Bez rukávů (prodloužené)</option>
       </select>
 
-      <label className="tshirt-setup__label">Barva:</label>
+      <label className="tshirt-setup__label">Barva: </label>
       <select
         className="tshirt-setup__input"
-        onChange={(e) => onColorChange(e.target.value)}
+        onChange={(e) => (onColorChange = e.target.value)}
       >
         <option value="yellow">Žlutá</option>
         <option value="red">Červená</option>
@@ -27,16 +28,12 @@ export const TShirtSetup = (onTypeChange, onColorChange, onPrintChange) => {
         <option value="green">Zelená</option>
       </select>
 
-      <label
-        className="tshirt-setup__label"
-        onChange={(e) => onPrintChange(e.target.value)}
-      >
-        Potisk:
-      </label>
+      <label className="tshirt-setup__label">Potisk:</label>
       <input
         className="tshirt-setup__input"
         type="text"
-        defaultValue="Ahoj světe"
+        defaultValue="Ahoj světe!"
+        onChange={(e) => (onPrintChange = e.target.value)}
       />
     </form>
   );
